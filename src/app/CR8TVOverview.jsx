@@ -8,7 +8,7 @@ const C = {
   off:      "#F5F4F0",
   charcoal: "#1A1A1A",
   mid:      "#2F2F2F",
-  gray:     "#888888",
+  gray:     "#BBBBBB",
   light:    "#DEDBD5",
   red:      "#C0392B",
 };
@@ -47,7 +47,7 @@ const SL = ({ n, children, light = false }) => (
     fontFamily: "'Barlow Condensed', sans-serif",
     fontSize: "0.6rem", fontWeight: 700,
     letterSpacing: "0.28em", textTransform: "uppercase",
-    color: light ? "rgba(255,255,255,0.35)" : C.gray,
+    color: light ? "rgba(255,255,255,0.65)" : C.gray,
     display: "flex", alignItems: "center", gap: 12, marginBottom: 14,
   }}>
     <span style={{ opacity: 0.4 }}>{n}</span>
@@ -172,7 +172,7 @@ const Nav = ({ active, setActive }) => {
           {!isMobile && (
             <span style={{
               fontFamily:"'IBM Plex Mono', monospace",
-              fontSize:"0.52rem", color:"rgba(255,255,255,0.2)",
+              fontSize:"0.7rem", color:"rgba(255,255,255,0.55)",
               letterSpacing:"0.12em", marginLeft:6,
             }}>CR8TV</span>
           )}
@@ -184,9 +184,9 @@ const Nav = ({ active, setActive }) => {
             {NAV_LINKS.map(({ label, id }) => (
               <button key={label} onClick={() => scrollTo(id, label)} style={{
                 fontFamily:"'Barlow Condensed', sans-serif",
-                fontSize:"0.62rem", fontWeight:700,
+                fontSize:"0.78rem", fontWeight:700,
                 letterSpacing:"0.18em", textTransform:"uppercase",
-                color: active === label ? C.white : "rgba(255,255,255,0.3)",
+                color: active === label ? C.white : "rgba(255,255,255,0.7)",
                 background:"none", border:"none", cursor:"pointer",
                 padding:"6px 14px",
                 borderBottom: active === label ? `2px solid ${C.red}` : "2px solid transparent",
@@ -200,7 +200,7 @@ const Nav = ({ active, setActive }) => {
           {!isMobile && (
             <div style={{
               fontFamily:"'IBM Plex Mono', monospace",
-              fontSize:"0.55rem", color:"rgba(255,255,255,0.18)",
+              fontSize:"0.72rem", color:"rgba(255,255,255,0.55)",
               letterSpacing:"0.1em",
             }}>CONFIDENTIAL · 2025</div>
           )}
@@ -254,7 +254,7 @@ const Nav = ({ active, setActive }) => {
               <div style={{ display:"flex", alignItems:"center", gap:16 }}>
                 <span style={{
                   fontFamily:"'IBM Plex Mono', monospace",
-                  fontSize:"0.58rem", color:C.red, letterSpacing:"0.1em",
+                  fontSize:"0.75rem", color:C.red, letterSpacing:"0.1em",
                 }}>0{i+1}</span>
                 <span style={{
                   fontFamily:"'Barlow Condensed', sans-serif",
@@ -263,13 +263,13 @@ const Nav = ({ active, setActive }) => {
                   color: active === label ? C.white : "rgba(255,255,255,0.5)",
                 }}>{label}</span>
               </div>
-              <span style={{ color:"rgba(255,255,255,0.2)", fontSize:"0.7rem" }}>→</span>
+              <span style={{ color:"rgba(255,255,255,0.55)", fontSize:"0.7rem" }}>→</span>
             </button>
           ))}
           <div style={{
             padding:"16px 24px",
             fontFamily:"'IBM Plex Mono', monospace",
-            fontSize:"0.55rem", color:"rgba(255,255,255,0.15)", letterSpacing:"0.1em",
+            fontSize:"0.72rem", color:"rgba(255,255,255,0.5)", letterSpacing:"0.1em",
           }}>CONFIDENTIAL · 2025</div>
         </div>
       )}
@@ -316,12 +316,12 @@ const FlywheelMobile = () => {
         borderBottom:"1px solid rgba(255,255,255,0.07)",
       }}>
         <span style={{
-          fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.58rem",
+          fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.75rem",
           fontWeight:700, letterSpacing:"0.25em", textTransform:"uppercase",
-          color:"rgba(255,255,255,0.18)",
+          color:"rgba(255,255,255,0.55)",
         }}>8 NODES OF EXPERTISE</span>
         <span style={{
-          fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.55rem",
+          fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.72rem",
           color:C.red, letterSpacing:"0.08em",
         }}>THE CREATIVE FLYWHEEL</span>
       </div>
@@ -342,25 +342,25 @@ const FlywheelMobile = () => {
             }}>
               <div style={{ display:"flex", alignItems:"center", gap:14 }}>
                 <span style={{
-                  fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.58rem",
-                  color: isAdvisory ? C.red : "rgba(255,255,255,0.18)",
+                  fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.75rem",
+                  color: isAdvisory ? C.red : "rgba(255,255,255,0.55)",
                   letterSpacing:"0.1em", minWidth:22,
                 }}>0{i+1}</span>
                 <span style={{
                   width:5, height:5, borderRadius:"50%", flexShrink:0,
-                  background: isOpen ? (isAdvisory ? C.red : C.white) : (isAdvisory ? C.red : "rgba(255,255,255,0.2)"),
+                  background: isOpen ? (isAdvisory ? C.red : C.white) : (isAdvisory ? C.red : "rgba(255,255,255,0.55)"),
                   transition:"background 0.2s",
                 }}/>
                 <span style={{
                   fontFamily:"'Barlow Condensed', sans-serif",
-                  fontSize:"0.88rem", fontWeight:700,
+                  fontSize:"0.95rem", fontWeight:700,
                   letterSpacing:"0.06em", textTransform:"uppercase",
                   color: isOpen ? C.white : (isAdvisory ? C.red : "rgba(255,255,255,0.55)"),
                   textAlign:"left", lineHeight:1.2, transition:"color 0.2s",
                 }}>{node.title}</span>
               </div>
               <span style={{
-                color: isAdvisory ? C.red : "rgba(255,255,255,0.2)",
+                color: isAdvisory ? C.red : "rgba(255,255,255,0.55)",
                 fontSize:"1.2rem", lineHeight:1, flexShrink:0, marginLeft:10,
                 display:"inline-block",
                 transform: isOpen ? "rotate(90deg)" : "none",
@@ -375,9 +375,9 @@ const FlywheelMobile = () => {
               <div style={{ padding:"2px 0 22px 36px" }}>
                 <span style={{
                   display:"inline-block", marginBottom:12,
-                  fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.54rem",
+                  fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.72rem",
                   fontWeight:600, letterSpacing:"0.14em", textTransform:"uppercase",
-                  color: isAdvisory ? C.red : "rgba(255,255,255,0.35)",
+                  color: isAdvisory ? C.red : "rgba(255,255,255,0.65)",
                   border:`1px solid ${isAdvisory ? C.red : "rgba(255,255,255,0.1)"}`,
                   padding:"3px 10px",
                 }}>{node.tag}</span>
@@ -388,7 +388,7 @@ const FlywheelMobile = () => {
                 {isAdvisory && (
                   <div style={{
                     marginTop:14, fontFamily:"'Barlow Condensed', sans-serif",
-                    fontSize:"0.6rem", fontWeight:700, letterSpacing:"0.2em",
+                    fontSize:"0.75rem", fontWeight:700, letterSpacing:"0.2em",
                     textTransform:"uppercase", color:C.red,
                     display:"flex", alignItems:"center", gap:8,
                   }}>→ CR8TV Advisory Vertical</div>
@@ -439,22 +439,22 @@ const FlywheelDesktop = () => {
             style={{ transition:"all 0.25s" }}/>
           {/* Default: THE CREATIVE full text */}
           {!centerHov && <>
-            <text x={cx} y={cy-18} textAnchor="middle" fill="rgba(255,255,255,0.35)"
+            <text x={cx} y={cy-18} textAnchor="middle" fill="rgba(255,255,255,0.65)"
               fontFamily="'Barlow Condensed',sans-serif" fontSize="10" fontWeight="700" letterSpacing="4">THE</text>
             <text x={cx} y={cy+2} textAnchor="middle" fill={C.white}
               fontFamily="'Barlow Condensed',sans-serif" fontSize="18" fontWeight="800" letterSpacing="3">CREATIVE</text>
-            <text x={cx} y={cy+20} textAnchor="middle" fill="rgba(255,255,255,0.2)"
+            <text x={cx} y={cy+20} textAnchor="middle" fill="rgba(255,255,255,0.55)"
               fontFamily="'Barlow Condensed',sans-serif" fontSize="8" fontWeight="600" letterSpacing="6">COLLECTIVE</text>
             <text x={cx} y={cy+36} textAnchor="middle" fill="rgba(192,57,43,0.5)"
               fontFamily="'IBM Plex Mono',monospace" fontSize="8" letterSpacing="3">hover ↓</text>
           </>}
           {/* Hover: CR8TV abbreviated mark */}
           {centerHov && <>
-            <text x={cx} y={cy-12} textAnchor="middle" fill="rgba(255,255,255,0.3)"
+            <text x={cx} y={cy-12} textAnchor="middle" fill="rgba(255,255,255,0.7)"
               fontFamily="'IBM Plex Mono',monospace" fontSize="9" letterSpacing="3">AKA</text>
             <text x={cx} y={cy+14} textAnchor="middle" fill={C.red}
               fontFamily="'Barlow Condensed',sans-serif" fontSize="28" fontWeight="900" letterSpacing="4">CR8TV</text>
-            <text x={cx} y={cy+32} textAnchor="middle" fill="rgba(255,255,255,0.2)"
+            <text x={cx} y={cy+32} textAnchor="middle" fill="rgba(255,255,255,0.55)"
               fontFamily="'IBM Plex Mono',monospace" fontSize="7" letterSpacing="2">see below →</text>
           </>}
         </g>
@@ -471,7 +471,7 @@ const FlywheelDesktop = () => {
                style={{ cursor:"pointer" }}>
               {/* Glow ring */}
               {isOn && <circle cx={nx} cy={ny} r={r+9} fill="none"
-                stroke={isAdvisory ? C.red : "rgba(255,255,255,0.15)"} strokeWidth="1"/>}
+                stroke={isAdvisory ? C.red : "rgba(255,255,255,0.5)"} strokeWidth="1"/>}
               {/* Node bg */}
               <circle cx={nx} cy={ny} r={r}
                 fill={isOn ? (isAdvisory ? C.red : C.charcoal) : (isAdvisory ? "rgba(192,57,43,0.18)" : "rgba(10,10,10,0.95)")}
@@ -481,7 +481,7 @@ const FlywheelDesktop = () => {
               {/* Node number */}
               <text x={nx} y={ny - r + 16}
                 textAnchor="middle"
-                fill={isAdvisory ? (isOn ? "rgba(255,255,255,0.5)" : "rgba(192,57,43,0.45)") : "rgba(255,255,255,0.18)"}
+                fill={isAdvisory ? (isOn ? "rgba(255,255,255,0.5)" : "rgba(192,57,43,0.45)") : "rgba(255,255,255,0.55)"}
                 fontFamily="'IBM Plex Mono',monospace"
                 fontSize="8" letterSpacing="1">0{i+1}</text>
               {/* Node label lines */}
@@ -518,13 +518,13 @@ const FlywheelDesktop = () => {
           <>
             <div style={{ display:"flex", alignItems:"center", gap:12, marginBottom:12 }}>
               <div style={{
-                fontFamily:"'Barlow Condensed',sans-serif", fontSize:"0.62rem",
+                fontFamily:"'Barlow Condensed',sans-serif", fontSize:"0.78rem",
                 fontWeight:700, letterSpacing:"0.22em", textTransform:"uppercase", color:C.red,
               }}>THE CREATIVE — OUR MANDATE</div>
               <span style={{ display:"block", flex:1, height:1, background:"rgba(192,57,43,0.2)" }}/>
             </div>
             <p style={{
-              fontSize:"0.88rem", fontWeight:300, color:"rgba(255,255,255,0.6)",
+              fontSize:"0.95rem", fontWeight:300, color:"rgba(255,255,255,0.6)",
               lineHeight:1.9, margin:0, fontStyle:"italic",
             }}>{CENTER_COPY}</p>
           </>
@@ -537,8 +537,8 @@ const FlywheelDesktop = () => {
                 color: node.advisory ? C.red : C.white,
               }}>{node.title}</div>
               <span style={{
-                fontFamily:"'IBM Plex Mono',monospace", fontSize:"0.56rem",
-                color: node.advisory ? C.red : "rgba(255,255,255,0.3)",
+                fontFamily:"'IBM Plex Mono',monospace", fontSize:"0.72rem",
+                color: node.advisory ? C.red : "rgba(255,255,255,0.7)",
                 border:`1px solid ${node.advisory ? C.red : "rgba(255,255,255,0.1)"}`,
                 padding:"3px 10px", letterSpacing:"0.12em", whiteSpace:"nowrap",
               }}>{node.tag}</span>
@@ -550,7 +550,7 @@ const FlywheelDesktop = () => {
             {node.advisory && (
               <div style={{
                 marginTop:14, fontFamily:"'Barlow Condensed',sans-serif",
-                fontSize:"0.62rem", fontWeight:700, letterSpacing:"0.2em",
+                fontSize:"0.78rem", fontWeight:700, letterSpacing:"0.2em",
                 textTransform:"uppercase", color:C.red,
                 display:"flex", alignItems:"center", gap:8,
               }}>→ CR8TV Advisory Vertical</div>
@@ -562,9 +562,9 @@ const FlywheelDesktop = () => {
           }}>
             <span style={{ display:"block", width:20, height:1, background:"rgba(255,255,255,0.1)" }}/>
             <span style={{
-              fontFamily:"'Barlow Condensed',sans-serif", fontSize:"0.62rem",
+              fontFamily:"'Barlow Condensed',sans-serif", fontSize:"0.78rem",
               fontWeight:700, letterSpacing:"0.22em", textTransform:"uppercase",
-              color:"rgba(255,255,255,0.15)",
+              color:"rgba(255,255,255,0.5)",
             }}>HOVER A NODE OR THE CENTER CIRCLE</span>
           </div>
         )}
@@ -585,12 +585,12 @@ const VerticalCard = ({ num, title, body, isAdvisory }) => {
   return (
     <div onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} style={{
       background: hover ? (isAdvisory ? C.red : C.charcoal) : C.black,
-      border:`1px solid ${isAdvisory ? C.red : (hover ? "rgba(255,255,255,0.15)" : "rgba(255,255,255,0.07)")}`,
+      border:`1px solid ${isAdvisory ? C.red : (hover ? "rgba(255,255,255,0.5)" : "rgba(255,255,255,0.07)")}`,
       padding:"28px 24px", transition:"all 0.25s", cursor:"default",
     }}>
       <div style={{
-        fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.6rem", fontWeight:600,
-        color: isAdvisory ? C.red : "rgba(255,255,255,0.2)",
+        fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.75rem", fontWeight:600,
+        color: isAdvisory ? C.red : "rgba(255,255,255,0.55)",
         letterSpacing:"0.15em", marginBottom:10,
       }}>{num}</div>
       <div style={{
@@ -601,10 +601,10 @@ const VerticalCard = ({ num, title, body, isAdvisory }) => {
       {isAdvisory && (
         <div style={{
           marginTop:16, display:"flex", alignItems:"center", gap:6,
-          fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.58rem", fontWeight:700,
+          fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.75rem", fontWeight:700,
           letterSpacing:"0.2em", textTransform:"uppercase",
           color: hover ? C.white : C.red,
-          borderTop:`1px solid ${hover ? "rgba(255,255,255,0.3)" : "rgba(192,57,43,0.3)"}`,
+          borderTop:`1px solid ${hover ? "rgba(255,255,255,0.7)" : "rgba(192,57,43,0.3)"}`,
           paddingTop:14,
         }}>
           <span>→</span> CR8TV Advisory Vertical
@@ -623,7 +623,7 @@ const TeamCard = ({ name, title, credentials, last, isMobile }) => (
   }}>
     <div style={{ fontFamily:"'Playfair Display', serif", fontSize:"1.3rem", fontWeight:700, color:C.white, marginBottom:4 }}>{name}</div>
     <div style={{
-      fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.6rem", fontWeight:700,
+      fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.75rem", fontWeight:700,
       letterSpacing:"0.2em", textTransform:"uppercase", color:C.gray, marginBottom:20,
     }}>{title}</div>
     <div style={{ display:"flex", flexDirection:"column", gap:7 }}>
@@ -670,7 +670,7 @@ const StatStrip = () => {
               fontWeight:600, color:C.red, letterSpacing:"-0.02em", lineHeight:1,
             }}>{val.toLocaleString()}{s.suffix}</div>
             <div style={{
-              fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.58rem", fontWeight:700,
+              fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.75rem", fontWeight:700,
               letterSpacing:"0.22em", textTransform:"uppercase",
               color:"rgba(255,255,255,0.25)", marginTop:8,
             }}>{s.label}</div>
@@ -773,20 +773,20 @@ const AdvisoryOverlay = ({ isOpen, onClose, isMobile }) => {
             display:"flex", alignItems:"center", gap:8,
             background:"none", border:"none", cursor:"pointer",
             fontFamily:"'Barlow Condensed', sans-serif",
-            fontSize:"0.62rem", fontWeight:700,
+            fontSize:"0.78rem", fontWeight:700,
             letterSpacing:"0.18em", textTransform:"uppercase",
-            color:"rgba(255,255,255,0.3)",
+            color:"rgba(255,255,255,0.7)",
             padding:"6px 0",
             transition:"color 0.2s",
           }}
           onMouseEnter={e => e.currentTarget.style.color=C.white}
-          onMouseLeave={e => e.currentTarget.style.color="rgba(255,255,255,0.3)"}>
+          onMouseLeave={e => e.currentTarget.style.color="rgba(255,255,255,0.7)"}>
             ← Overview
           </button>
           <span style={{ color:"rgba(255,255,255,0.12)" }}>|</span>
           <span style={{
             fontFamily:"'Barlow Condensed', sans-serif",
-            fontSize:"0.62rem", fontWeight:700,
+            fontSize:"0.78rem", fontWeight:700,
             letterSpacing:"0.22em", textTransform:"uppercase",
             color:C.red,
           }}>CR8TV Advisory</span>
@@ -799,7 +799,7 @@ const AdvisoryOverlay = ({ isOpen, onClose, isMobile }) => {
           fontSize:"1.1rem", lineHeight:1,
           transition:"all 0.2s",
         }}
-        onMouseEnter={e => { e.currentTarget.style.borderColor="rgba(255,255,255,0.3)"; e.currentTarget.style.color=C.white; }}
+        onMouseEnter={e => { e.currentTarget.style.borderColor="rgba(255,255,255,0.7)"; e.currentTarget.style.color=C.white; }}
         onMouseLeave={e => { e.currentTarget.style.borderColor="rgba(255,255,255,0.1)"; e.currentTarget.style.color="rgba(255,255,255,0.4)"; }}>
           ✕
         </button>
@@ -814,7 +814,7 @@ const AdvisoryOverlay = ({ isOpen, onClose, isMobile }) => {
         <TopoPattern opacity={0.07}/>
         <div style={{ maxWidth:1100, margin:"0 auto", position:"relative", zIndex:2 }}>
           <div style={{
-            fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.58rem",
+            fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.75rem",
             color:C.red, letterSpacing:"0.2em", marginBottom:20,
           }}>CR8TV · ADVISORY PRACTICE</div>
           <h1 style={{
@@ -864,9 +864,9 @@ const AdvisoryOverlay = ({ isOpen, onClose, isMobile }) => {
                 }}>{val}</div>
                 <div style={{
                   fontFamily:"'Barlow Condensed', sans-serif",
-                  fontSize:"0.54rem", fontWeight:700,
+                  fontSize:"0.72rem", fontWeight:700,
                   letterSpacing:"0.18em", textTransform:"uppercase",
-                  color:"rgba(255,255,255,0.22)", marginTop:6,
+                  color:"rgba(255,255,255,0.6)", marginTop:6,
                 }}>{label}</div>
               </div>
             ))}
@@ -888,7 +888,7 @@ const AdvisoryOverlay = ({ isOpen, onClose, isMobile }) => {
               fontWeight:700, color:C.white, lineHeight:1.1,
             }}>
               Four integrated<br/>
-              <em style={{ color:"rgba(255,255,255,0.3)", fontWeight:400 }}>practice areas.</em>
+              <em style={{ color:"rgba(255,255,255,0.7)", fontWeight:400 }}>practice areas.</em>
             </h2>
           </div>
 
@@ -909,8 +909,8 @@ const AdvisoryOverlay = ({ isOpen, onClose, isMobile }) => {
                   }}>
                     <div style={{ display:"flex", alignItems:"center", gap:20, textAlign:"left" }}>
                       <span style={{
-                        fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.6rem",
-                        color: isOpen ? C.red : "rgba(255,255,255,0.2)",
+                        fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.75rem",
+                        color: isOpen ? C.red : "rgba(255,255,255,0.55)",
                         letterSpacing:"0.1em", minWidth:22,
                       }}>{svc.num}</span>
                       <span style={{
@@ -923,15 +923,15 @@ const AdvisoryOverlay = ({ isOpen, onClose, isMobile }) => {
                     </div>
                     <div style={{ display:"flex", alignItems:"center", gap:12, flexShrink:0, marginLeft:16 }}>
                       <span style={{
-                        fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.54rem",
-                        color: isOpen ? C.red : "rgba(255,255,255,0.2)",
+                        fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.72rem",
+                        color: isOpen ? C.red : "rgba(255,255,255,0.55)",
                         border:`1px solid ${isOpen ? C.red : "rgba(255,255,255,0.08)"}`,
                         padding:"2px 8px", letterSpacing:"0.1em",
                         display: isMobile ? "none" : "block",
                         transition:"all 0.2s",
                       }}>{svc.tag}</span>
                       <span style={{
-                        color: isOpen ? C.red : "rgba(255,255,255,0.2)",
+                        color: isOpen ? C.red : "rgba(255,255,255,0.55)",
                         fontSize:"1.2rem", display:"inline-block",
                         transform: isOpen ? "rotate(90deg)" : "none",
                         transition:"transform 0.25s, color 0.2s",
@@ -947,7 +947,7 @@ const AdvisoryOverlay = ({ isOpen, onClose, isMobile }) => {
                       padding: isMobile ? "0 20px 24px 42px" : "0 28px 28px 62px",
                     }}>
                       <p style={{
-                        fontSize:"0.85rem", fontWeight:300,
+                        fontSize:"0.95rem", fontWeight:300,
                         color:"rgba(255,255,255,0.5)", lineHeight:1.85,
                         marginBottom:20,
                       }}>{svc.copy}</p>
@@ -1002,7 +1002,7 @@ const AdvisoryOverlay = ({ isOpen, onClose, isMobile }) => {
             }}>
               {(isMobile ? ["Firm","Rate"] : ["Firm / Category","Rate Range","Type"]).map((h,i) => (
                 <div key={i} style={{
-                  fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.6rem",
+                  fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.75rem",
                   fontWeight:700, letterSpacing:"0.2em", textTransform:"uppercase",
                   color:"rgba(255,255,255,0.25)",
                 }}>{h}</div>
@@ -1032,7 +1032,7 @@ const AdvisoryOverlay = ({ isOpen, onClose, isMobile }) => {
                 {!isMobile && (
                   <div style={{
                     fontFamily:"'Barlow Condensed', sans-serif",
-                    fontSize:"0.6rem", fontWeight:700, letterSpacing:"0.15em", textTransform:"uppercase",
+                    fontSize:"0.75rem", fontWeight:700, letterSpacing:"0.15em", textTransform:"uppercase",
                     color: highlight ? C.red : "rgba(255,255,255,0.25)",
                   }}>{type}</div>
                 )}
@@ -1071,7 +1071,7 @@ const AdvisoryOverlay = ({ isOpen, onClose, isMobile }) => {
                 <em style={{ color:C.red, fontWeight:400 }}>AI-augmented delivery.</em>
               </h2>
               <p style={{
-                fontSize:"0.88rem", fontWeight:300,
+                fontSize:"0.95rem", fontWeight:300,
                 color:"rgba(255,255,255,0.45)", lineHeight:1.9, marginBottom:24,
               }}>
                 Twenty years of founder-level operator experience in hospitality and
@@ -1080,7 +1080,7 @@ const AdvisoryOverlay = ({ isOpen, onClose, isMobile }) => {
               </p>
               <p style={{
                 fontSize:"0.82rem", fontWeight:300,
-                color:"rgba(255,255,255,0.3)", lineHeight:1.9,
+                color:"rgba(255,255,255,0.7)", lineHeight:1.9,
                 borderLeft:`2px solid rgba(255,255,255,0.08)`, paddingLeft:18,
               }}>
                 We don't outsource the thinking. Every engagement is led by a senior operator
@@ -1125,25 +1125,25 @@ const AdvisoryOverlay = ({ isOpen, onClose, isMobile }) => {
       }}>
         <div style={{
           fontFamily:"'Barlow Condensed', sans-serif", fontWeight:800,
-          fontSize:"0.85rem", letterSpacing:"0.3em", textTransform:"uppercase", color:C.white,
+          fontSize:"0.95rem", letterSpacing:"0.3em", textTransform:"uppercase", color:C.white,
         }}>CR8TV <span style={{ color:C.red }}>ADVISORY</span></div>
         <button onClick={onClose} style={{
           display:"flex", alignItems:"center", gap:8,
-          background:"none", border:"1px solid rgba(255,255,255,0.15)",
+          background:"none", border:"1px solid rgba(255,255,255,0.5)",
           cursor:"pointer", padding:"8px 20px",
           fontFamily:"'Barlow Condensed', sans-serif",
-          fontSize:"0.62rem", fontWeight:700,
+          fontSize:"0.78rem", fontWeight:700,
           letterSpacing:"0.18em", textTransform:"uppercase",
           color:"rgba(255,255,255,0.5)",
           transition:"all 0.2s",
         }}
         onMouseEnter={e => { e.currentTarget.style.borderColor=C.red; e.currentTarget.style.color=C.red; }}
-        onMouseLeave={e => { e.currentTarget.style.borderColor="rgba(255,255,255,0.15)"; e.currentTarget.style.color="rgba(255,255,255,0.5)"; }}>
+        onMouseLeave={e => { e.currentTarget.style.borderColor="rgba(255,255,255,0.5)"; e.currentTarget.style.color="rgba(255,255,255,0.5)"; }}>
           ← Back to Overview
         </button>
         <div style={{
-          fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.52rem",
-          color:"rgba(255,255,255,0.15)", letterSpacing:"0.1em",
+          fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.7rem",
+          color:"rgba(255,255,255,0.5)", letterSpacing:"0.1em",
         }}>Confidential · 2025</div>
       </div>
 
@@ -1182,21 +1182,21 @@ const CaseStudyCard = ({ img, num, tag, title, subtitle, stats, body, isMobile }
           display:"flex", gap:8, alignItems:"center",
         }}>
           <span style={{
-            fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.52rem",
+            fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.7rem",
             color:C.red, border:`1px solid ${C.red}`, padding:"2px 8px", letterSpacing:"0.1em",
           }}>{tag}</span>
         </div>
         <div style={{
           position:"absolute", top:12, right:12,
-          fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.55rem",
-          color:"rgba(255,255,255,0.2)", letterSpacing:"0.08em",
+          fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.72rem",
+          color:"rgba(255,255,255,0.55)", letterSpacing:"0.08em",
         }}>{num}</div>
       </div>
       {/* Content */}
       <div style={{ padding: isMobile ? "20px" : "24px 28px", flex:1 }}>
         <div style={{
-          fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.58rem",
-          color:"rgba(255,255,255,0.3)", letterSpacing:"0.12em", textTransform:"uppercase",
+          fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.75rem",
+          color:"rgba(255,255,255,0.7)", letterSpacing:"0.12em", textTransform:"uppercase",
           marginBottom:6,
         }}>{subtitle}</div>
         <div style={{
@@ -1217,9 +1217,9 @@ const CaseStudyCard = ({ img, num, tag, title, subtitle, stats, body, isMobile }
                   fontWeight:600, color:C.red,
                 }}>{val}</div>
                 <div style={{
-                  fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.54rem",
+                  fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.72rem",
                   fontWeight:700, letterSpacing:"0.16em", textTransform:"uppercase",
-                  color:"rgba(255,255,255,0.22)",
+                  color:"rgba(255,255,255,0.6)",
                 }}>{lbl}</div>
               </div>
             ))}
@@ -1274,7 +1274,7 @@ const PortfolioSection = ({ isMobile, px, py }) => {
             </h2>
             <div>
               <p style={{
-                fontSize:"0.88rem", fontWeight:300, color:"rgba(255,255,255,0.4)",
+                fontSize:"0.95rem", fontWeight:300, color:"rgba(255,255,255,0.4)",
                 lineHeight:1.9, marginBottom:20,
               }}>
                 Through 20 years of executive expertise in luxury hospitality, brands,
@@ -1286,7 +1286,7 @@ const PortfolioSection = ({ isMobile, px, py }) => {
                 {[["3,000+","Events Produced"],["1M+","Tickets"],["100s of M","Revenue Volume"],["20 yrs","Track Record"]].map(([v,l],i)=>(
                   <div key={i}>
                     <div style={{ fontFamily:"'IBM Plex Mono', monospace", fontSize:"1rem", fontWeight:600, color:C.red }}>{v}</div>
-                    <div style={{ fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.54rem", fontWeight:700, letterSpacing:"0.16em", textTransform:"uppercase", color:"rgba(255,255,255,0.22)" }}>{l}</div>
+                    <div style={{ fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.72rem", fontWeight:700, letterSpacing:"0.16em", textTransform:"uppercase", color:"rgba(255,255,255,0.6)" }}>{l}</div>
                   </div>
                 ))}
               </div>
@@ -1348,16 +1348,16 @@ const PortfolioSection = ({ isMobile, px, py }) => {
           }}>
             <div>
               <div style={{
-                fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.58rem",
+                fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.75rem",
                 color:C.red, letterSpacing:"0.14em", textTransform:"uppercase", marginBottom:12,
               }}>Award Winning Branding Campaign</div>
               <h3 style={{
                 fontFamily:"'Playfair Display', serif",
                 fontSize: isMobile ? "1.8rem" : "2.2rem",
                 fontWeight:700, color:C.white, lineHeight:1.1, marginBottom:20,
-              }}>Hakkasan Grand Opening<br/><em style={{ color:"rgba(255,255,255,0.35)", fontWeight:400 }}>Las Vegas & Beverly Hills</em></h3>
+              }}>Hakkasan Grand Opening<br/><em style={{ color:"rgba(255,255,255,0.65)", fontWeight:400 }}>Las Vegas & Beverly Hills</em></h3>
               <p style={{
-                fontSize:"0.85rem", fontWeight:300, color:"rgba(255,255,255,0.45)",
+                fontSize:"0.95rem", fontWeight:300, color:"rgba(255,255,255,0.45)",
                 lineHeight:1.85, marginBottom:20,
               }}>
                 In 2012–13, we directed and executed the Grand Opening campaigns for
@@ -1370,7 +1370,7 @@ const PortfolioSection = ({ isMobile, px, py }) => {
                 {[["2","Locations"],["Award","Winning"],["Grand","Opening"]].map(([v,l],i)=>(
                   <div key={i} style={{ borderLeft:`2px solid ${i===0?C.red:"rgba(255,255,255,0.1)"}`, paddingLeft:12 }}>
                     <div style={{ fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.9rem", fontWeight:600, color: i===0?C.red:C.white }}>{v}</div>
-                    <div style={{ fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.54rem", fontWeight:700, letterSpacing:"0.16em", textTransform:"uppercase", color:"rgba(255,255,255,0.22)" }}>{l}</div>
+                    <div style={{ fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.72rem", fontWeight:700, letterSpacing:"0.16em", textTransform:"uppercase", color:"rgba(255,255,255,0.6)" }}>{l}</div>
                   </div>
                 ))}
               </div>
@@ -1383,7 +1383,7 @@ const PortfolioSection = ({ isMobile, px, py }) => {
               }}/>
               <div style={{
                 position:"absolute", bottom:16, left:16,
-                fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.54rem",
+                fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.72rem",
                 color:"rgba(255,255,255,0.4)", background:"rgba(0,0,0,0.7)",
                 padding:"4px 10px", letterSpacing:"0.1em",
               }}>EXPERIENTIAL MARKETING · ACTIVATIONS</div>
@@ -1431,9 +1431,9 @@ const PortfolioSection = ({ isMobile, px, py }) => {
                   display:"flex", alignItems:"center",
                 }}>
                   <span style={{
-                    fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.6rem",
+                    fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.75rem",
                     fontWeight:700, letterSpacing:"0.08em", textTransform:"uppercase",
-                    color: i<3 ? "rgba(255,255,255,0.7)" : "rgba(255,255,255,0.3)",
+                    color: i<3 ? "rgba(255,255,255,0.7)" : "rgba(255,255,255,0.7)",
                     lineHeight:1.3,
                   }}>{s}</span>
                 </div>
@@ -1461,16 +1461,16 @@ const PortfolioSection = ({ isMobile, px, py }) => {
               fontFamily:"'Playfair Display', serif",
               fontSize: isMobile ? "1.8rem" : "2.2rem",
               fontWeight:700, color:C.white, lineHeight:1.1,
-            }}>Artists Booked<br/><em style={{ color:"rgba(255,255,255,0.3)", fontWeight:400 }}>& Events Produced With</em></h3>
+            }}>Artists Booked<br/><em style={{ color:"rgba(255,255,255,0.7)", fontWeight:400 }}>& Events Produced With</em></h3>
             <div style={{ display:"flex", gap:4 }}>
               {artistTabs.map(tab => (
                 <button key={tab.key} onClick={() => setArtistTab(tab.key)} style={{
                   background: artistTab===tab.key ? C.red : "transparent",
                   border:`1px solid ${artistTab===tab.key ? C.red : "rgba(255,255,255,0.12)"}`,
                   cursor:"pointer", padding:"6px 14px",
-                  fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.6rem",
+                  fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.75rem",
                   fontWeight:700, letterSpacing:"0.14em", textTransform:"uppercase",
-                  color: artistTab===tab.key ? C.white : "rgba(255,255,255,0.35)",
+                  color: artistTab===tab.key ? C.white : "rgba(255,255,255,0.65)",
                   transition:"all 0.2s",
                 }}>{tab.label}</button>
               ))}
@@ -1513,7 +1513,7 @@ const PortfolioSection = ({ isMobile, px, py }) => {
             <div>
               <SL n="04E" light>BRAND CLIENTS</SL>
               <p style={{
-                fontSize:"0.78rem", fontWeight:300, color:"rgba(255,255,255,0.3)",
+                fontSize:"0.78rem", fontWeight:300, color:"rgba(255,255,255,0.7)",
                 lineHeight:1.7, marginBottom:20,
               }}>Our most prized brand client relationships — produced events with, for, and in partnership with.</p>
               <img src={img_brands} alt="Brand Relationships" style={{
@@ -1525,7 +1525,7 @@ const PortfolioSection = ({ isMobile, px, py }) => {
             <div>
               <SL n="04F" light>HOSPITALITY NETWORK</SL>
               <p style={{
-                fontSize:"0.78rem", fontWeight:300, color:"rgba(255,255,255,0.3)",
+                fontSize:"0.78rem", fontWeight:300, color:"rgba(255,255,255,0.7)",
                 lineHeight:1.7, marginBottom:20,
               }}>Our global network of hospitality brands, iconic venues, and operational partnerships.</p>
               <img src={img_hospitality} alt="Hospitality Brands" style={{
@@ -1609,11 +1609,11 @@ const MaximSection = ({ isMobile, px, py }) => {
               letterSpacing:"-0.03em", marginBottom:16,
             }}>MAXIM</div>
             <div style={{
-              fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.6rem",
+              fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.75rem",
               color:C.red, letterSpacing:"0.2em", textTransform:"uppercase", marginBottom:20,
             }}>Media Experiential Partnership · 1995–Present</div>
             <p style={{
-              fontSize:"0.85rem", fontWeight:300, color:"rgba(255,255,255,0.4)",
+              fontSize:"0.95rem", fontWeight:300, color:"rgba(255,255,255,0.4)",
               lineHeight:1.85, maxWidth:520,
             }}>
               One of the most recognized lifestyle brands in the world. Our carefully
@@ -1644,9 +1644,9 @@ const MaximSection = ({ isMobile, px, py }) => {
                   fontWeight:600, color: i<2 ? C.red : C.white, marginBottom:4,
                 }}>{val}</div>
                 <div style={{
-                  fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.54rem",
+                  fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.72rem",
                   fontWeight:700, letterSpacing:"0.14em", textTransform:"uppercase",
-                  color:"rgba(255,255,255,0.22)",
+                  color:"rgba(255,255,255,0.6)",
                 }}>{lbl}</div>
               </div>
             ))}
@@ -1662,9 +1662,9 @@ const MaximSection = ({ isMobile, px, py }) => {
               background: eventTab===s.key ? C.red : "transparent",
               border:`1px solid ${eventTab===s.key ? C.red : "rgba(255,255,255,0.12)"}`,
               cursor:"pointer", padding: isMobile ? "7px 14px" : "8px 20px",
-              fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.62rem",
+              fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.78rem",
               fontWeight:700, letterSpacing:"0.14em", textTransform:"uppercase",
-              color: eventTab===s.key ? C.white : "rgba(255,255,255,0.35)",
+              color: eventTab===s.key ? C.white : "rgba(255,255,255,0.65)",
               transition:"all 0.2s",
             }}>{s.label}</button>
           ))}
@@ -1699,7 +1699,7 @@ const MaximSection = ({ isMobile, px, py }) => {
                     fontWeight:600, color: i===0 ? C.red : C.white,
                   }}>{v}</div>
                   <div style={{
-                    fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.54rem",
+                    fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.72rem",
                     fontWeight:700, letterSpacing:"0.16em", textTransform:"uppercase",
                     color:"rgba(255,255,255,0.4)",
                   }}>{l}</div>
@@ -1714,7 +1714,7 @@ const MaximSection = ({ isMobile, px, py }) => {
             padding: isMobile ? "24px 20px" : "28px 32px",
           }}>
             <div style={{
-              fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.58rem",
+              fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.75rem",
               fontWeight:700, letterSpacing:"0.22em", textTransform:"uppercase",
               color:"rgba(255,255,255,0.25)", marginBottom:20,
             }}>PAST EVENTS</div>
@@ -1728,17 +1728,17 @@ const MaximSection = ({ isMobile, px, py }) => {
                 }}>
                   <div style={{ display:"flex", gap:12, alignItems:"center", marginBottom:4 }}>
                     <span style={{
-                      fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.6rem",
-                      color: i===0 ? C.red : "rgba(255,255,255,0.3)", letterSpacing:"0.08em",
+                      fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.75rem",
+                      color: i===0 ? C.red : "rgba(255,255,255,0.7)", letterSpacing:"0.08em",
                     }}>{ev.year}</span>
                     <span style={{
-                      fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.68rem",
+                      fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.82rem",
                       fontWeight:700, color:"rgba(255,255,255,0.6)", letterSpacing:"0.06em",
                     }}>{ev.city}</span>
                   </div>
                   <div style={{
-                    fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.62rem",
-                    fontWeight:400, color:"rgba(255,255,255,0.3)", letterSpacing:"0.04em",
+                    fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.78rem",
+                    fontWeight:400, color:"rgba(255,255,255,0.7)", letterSpacing:"0.04em",
                   }}>{ev.acts}</div>
                 </div>
               ))}
@@ -1781,7 +1781,7 @@ export default function CR8TVOverview() {
         {!isMobile && (
           <div style={{
             position:"absolute", left:20, bottom:160,
-            fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.52rem", fontWeight:700,
+            fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.7rem", fontWeight:700,
             letterSpacing:"0.3em", textTransform:"uppercase", color:"rgba(255,255,255,0.12)",
             writingMode:"vertical-rl", transform:"rotate(180deg)",
           }}>CULTURE · LIFESTYLE · ART · FASHION · MUSIC · ENTERTAINMENT</div>
@@ -1789,11 +1789,11 @@ export default function CR8TVOverview() {
         {/* Top anchor — sits flush to top padding */}
         <div style={{ position:"relative", zIndex:2 }}>
           <div style={{
-            fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.62rem", fontWeight:700,
-            letterSpacing:"0.4em", textTransform:"uppercase", color:"rgba(255,255,255,0.22)",
+            fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.78rem", fontWeight:700,
+            letterSpacing:"0.4em", textTransform:"uppercase", color:"rgba(255,255,255,0.6)",
             display:"flex", alignItems:"center", gap:14,
           }}>
-            <span style={{ display:"block", width:24, height:1, background:"rgba(255,255,255,0.2)" }}/>
+            <span style={{ display:"block", width:24, height:1, background:"rgba(255,255,255,0.55)" }}/>
             CONFIDENTIAL INFORMATION MEMORANDUM · 2025
           </div>
         </div>
@@ -1825,10 +1825,10 @@ export default function CR8TVOverview() {
           <div style={{ display:"flex", gap:8, flexWrap:"wrap" }}>
             {["Experiential Events","Hospitality","Advisory","Brand Development","Entertainment"].map(t => (
               <span key={t} style={{
-                fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.58rem", fontWeight:700,
+                fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.75rem", fontWeight:700,
                 letterSpacing:"0.2em", textTransform:"uppercase",
                 padding:"6px 12px", border:"1px solid rgba(255,255,255,0.12)",
-                color:"rgba(255,255,255,0.35)",
+                color:"rgba(255,255,255,0.65)",
               }}>{t}</span>
             ))}
           </div>
@@ -1838,12 +1838,12 @@ export default function CR8TVOverview() {
         <div style={{ position:"relative", zIndex:2, display:"flex", alignItems:"center", gap:10 }}>
           <span style={{
             display:"block", width:1, height:32,
-            background:"rgba(255,255,255,0.15)",
+            background:"rgba(255,255,255,0.5)",
           }}/>
           <span style={{
-            fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.55rem",
+            fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.72rem",
             fontWeight:700, letterSpacing:"0.25em", textTransform:"uppercase",
-            color:"rgba(255,255,255,0.15)",
+            color:"rgba(255,255,255,0.5)",
           }}>Scroll to explore</span>
         </div>
       </section>
@@ -1875,7 +1875,7 @@ export default function CR8TVOverview() {
                 We don't just produce events — we create the moments people remember.
               </p>
               <p style={{
-                fontSize:"0.85rem", fontWeight:300, color:C.gray, lineHeight:1.85,
+                fontSize:"0.95rem", fontWeight:300, color:C.gray, lineHeight:1.85,
                 borderLeft:`2px solid ${C.light}`, paddingLeft:18,
               }}>
                 The operating collective behind culture-defining brands, experiences, and places.
@@ -1886,8 +1886,8 @@ export default function CR8TVOverview() {
                 <TopoPattern opacity={0.08}/>
                 <div style={{ position:"relative", zIndex:2 }}>
                   <div style={{
-                    fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.58rem",
-                    color:"rgba(255,255,255,0.2)", letterSpacing:"0.15em", marginBottom:20,
+                    fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.75rem",
+                    color:"rgba(255,255,255,0.55)", letterSpacing:"0.15em", marginBottom:20,
                   }}>WHO WE ARE</div>
                   <p style={{
                     fontFamily:"'Playfair Display', serif",
@@ -1901,7 +1901,7 @@ export default function CR8TVOverview() {
                   <div style={{ display:"flex", gap:6, flexWrap:"wrap" }}>
                     {["Media","Production","Entertainment","Hospitality","Technology","Management"].map(t => (
                       <span key={t} style={{
-                        fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.55rem", fontWeight:700,
+                        fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.72rem", fontWeight:700,
                         letterSpacing:"0.18em", textTransform:"uppercase",
                         color:"rgba(255,255,255,0.25)", border:"1px solid rgba(255,255,255,0.08)", padding:"4px 10px",
                       }}>{t}</span>
@@ -1942,7 +1942,7 @@ export default function CR8TVOverview() {
                 letterSpacing:"-0.02em", margin:0,
               }}>
                 Eight vertically<br/>integrated<br/>
-                <em style={{ color:"rgba(255,255,255,0.3)", fontWeight:400 }}>points of expertise.</em>
+                <em style={{ color:"rgba(255,255,255,0.7)", fontWeight:400 }}>points of expertise.</em>
               </h2>
             </div>
             <div style={{ maxWidth: isMobile ? "100%" : 420 }}>
@@ -1962,7 +1962,7 @@ export default function CR8TVOverview() {
                 powers CR8TV Advisory — our AI-augmented capital and financial advisory practice.
               </p>
               {!isMobile && (
-                <p style={{ marginTop:16, fontSize:"0.72rem", color:"rgba(255,255,255,0.18)", fontStyle:"italic", letterSpacing:"0.05em" }}>
+                <p style={{ marginTop:16, fontSize:"0.72rem", color:"rgba(255,255,255,0.55)", fontStyle:"italic", letterSpacing:"0.05em" }}>
                   Hover any node — or the center circle — to explore
                 </p>
               )}
@@ -2057,8 +2057,8 @@ export default function CR8TVOverview() {
               <div key={i} style={{
                 padding: isMobile ? "2px 14px 2px 0" : "0 28px",
                 borderRight: (!isMobile && i < a.length-1) ? "1px solid rgba(255,255,255,0.08)" : "none",
-                fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.62rem", fontWeight:700,
-                letterSpacing:"0.2em", textTransform:"uppercase", color:"rgba(255,255,255,0.3)",
+                fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.78rem", fontWeight:700,
+                letterSpacing:"0.2em", textTransform:"uppercase", color:"rgba(255,255,255,0.7)",
               }}>{t}</div>
             ))}
           </div>
@@ -2089,7 +2089,7 @@ export default function CR8TVOverview() {
                 credentials:["Founder — Harry O's Park City, Utah","Founder — Creative Marketing Group","Director of Marketing — Hakkasan Group","VP of Marketing & Entertainment — Drais International","Founder — The Creative | The CR8TV"] },
               { name:"Joe Lopez", title:"Operating Partner & General Manager",
                 credentials:["General Manager — Pure Management Group, Las Vegas","Operating Partner — LIV Nightclub, Miami","Operating Partner — Drais International, Las Vegas","VP of F&B — Stronach Properties","VP of Entertainment & Hospitality — Zouk Group"] },
-              { name:"Gerald Pacheco", title:"VP of Experiences & Sales",
+              { name:"Gerald Pacheco", title:"Co-Founder & President of Experiential Events",
                 credentials:["Director of Marketing — SBE","VP of Marketing & Events — SBE","VP of Events — Maxim Magazine","VP of Sales — Vellamo Water","VP of Experiences — The CR8TV"],
                 last:true },
             ].map((m, i) => <TeamCard key={i} {...m} isMobile={isMobile} />)}
@@ -2180,7 +2180,7 @@ export default function CR8TVOverview() {
                   }}>{val}</div>
                   <div style={{
                     fontFamily:"'Barlow Condensed', sans-serif",
-                    fontSize:"0.58rem", fontWeight:700,
+                    fontSize:"0.75rem", fontWeight:700,
                     letterSpacing:"0.2em", textTransform:"uppercase",
                     color:"rgba(255,255,255,0.25)",
                   }}>{label}</div>
@@ -2208,17 +2208,17 @@ export default function CR8TVOverview() {
         }}>
           THE <span style={{ color:C.red }}>CREA</span>TIVE{" "}
           <span style={{ opacity:0.2 }}>|</span>{" "}
-          <span style={{ color:"rgba(255,255,255,0.3)", fontSize:"0.7rem" }}>CR8TV</span>
+          <span style={{ color:"rgba(255,255,255,0.7)", fontSize:"0.7rem" }}>CR8TV</span>
         </div>
         {!isMobile && (
           <div style={{
-            fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.58rem", fontWeight:700,
-            letterSpacing:"0.2em", textTransform:"uppercase", color:"rgba(255,255,255,0.2)",
+            fontFamily:"'Barlow Condensed', sans-serif", fontSize:"0.75rem", fontWeight:700,
+            letterSpacing:"0.2em", textTransform:"uppercase", color:"rgba(255,255,255,0.55)",
           }}>CULTURE · LIFESTYLE · ART · FASHION · MUSIC · ENTERTAINMENT</div>
         )}
         <div style={{
-          fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.55rem",
-          color:"rgba(255,255,255,0.15)", letterSpacing:"0.1em",
+          fontFamily:"'IBM Plex Mono', monospace", fontSize:"0.72rem",
+          color:"rgba(255,255,255,0.5)", letterSpacing:"0.1em",
         }}>Confidential · 2025</div>
       </footer>
     </div>
